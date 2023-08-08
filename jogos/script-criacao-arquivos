@@ -1,0 +1,10 @@
+arquivo = open("palavras.txt", "w")
+
+arquivo.write("banana\n")
+arquivo.write("maça\n")
+arquivo.write("melancia\n")
+arquivo.write("abacate\n")
+arquivo.write("tomate\n")
+arquivo.write("laranja\n")
+
+arquivo.close()
