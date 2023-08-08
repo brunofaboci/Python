@@ -1,4 +1,6 @@
 import random
+
+
 def jogar():
     mostrar_mensagem_boas_vindas()
     palavra_secreta = busca_palavra_secreta()
@@ -27,10 +29,13 @@ def jogar():
     if enforcou:
         print("Você perdeu!")
     print("Fim de Jogo")
+
+
 def mostrar_mensagem_boas_vindas():
     print("***************************")
     print("Bem vindo ao jogo da Forca!")
     print("***************************")
+
 
 def busca_palavra_secreta():
     arquivo = open("palavras.txt", "r")
@@ -41,6 +46,7 @@ def busca_palavra_secreta():
     arquivo.close()
 
     return random.choice(palavras)
+
 
 def adiciona_letra_na_posicao_correta(palavra_secreta, chute, letras_acertadas):
     index = 0
