@@ -20,7 +20,7 @@ else:
 # 3- Faça um programa que verifique se um número é divisível por 3 e 5 usando a estrutura condicional if.else.
 num = 30
 if num % 3 == 0 and num % 5 == 0:
-    print("é divisivel por 3 e 5")
+    print("é divisível por 3 e 5")
 else:
     print("não atende as condições")
 
@@ -36,7 +36,7 @@ else:
     print("Bom dia")
 
 # 6- Faça um programa que verifique se um número é múltiplo de 2, 3 ou 5
-# utilizando a estrutura condicional if.elsif..else.
+# utilizando a estrutura condicional if.elsif.else.
 num = 30
 if num % 2 == 0 or num % 3 == 0 or num % 5 == 0:
     print("é múltiplo de 2, 3 ou 5")
@@ -82,11 +82,3 @@ while True:
 
 fahrenheit = (celsius * (9 / 5)) + 32
 print("{} celsius degrees is equivalent to {} fahrenheit".format(celsius, fahrenheit))
-
-
-
-
-
-
-
-
