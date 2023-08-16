@@ -6,16 +6,21 @@ class ContaCorrente:
         self.__saldo = saldo
         self.__limite = limite
 
-    def get_saldo(self):
+    @property
+    def saldo(self):
         return self.__saldo
 
-    def get_limite(self):
-        return self.__limite
-
-    def get_titular(self):
+    @property
+    def titular(self):
         return self.__titular
 
-    def set_limite(self, limite):
+    @property
+    def limite(self):
+        return self.__limite
+
+    @limite.setter
+    def limite(self, limite):
+        assert isinstance(limite, float)
         self.__limite = limite
 
     def extrato(self):
@@ -33,7 +38,7 @@ class ContaCorrente:
         conta_destino.depositar(valor)
 
 
-conta = ContaCorrente(123, "bruno", 150, 10000)
+# conta = ContaCorrente(123, "bruno", 150, 10000)
 # conta2 = ContaCorrente(456, "joao", 200)
 # print(conta.extrato())
 # print(conta.depositar(100))
