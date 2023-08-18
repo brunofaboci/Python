@@ -6,6 +6,16 @@ class ContaCorrente:
         self.__saldo = saldo
         self.__limite = limite
 
+    # métodos de classe
+    @staticmethod
+    def codigo_banco():
+        return '001'
+
+    @staticmethod
+    def codigos_bancos():
+        return {'BB': '001', 'Caixa': '104', 'Bradesco': '237'}
+
+    # métodos de instancia
     @property
     def saldo(self):
         return self.__saldo
@@ -30,8 +40,15 @@ class ContaCorrente:
     def depositar(self, valor):
         self.__saldo += valor
 
+    def __valor_disponivel(self, valor):
+        disponivel = self.__saldo + self.__limite
+        return valor <= disponivel
+
     def sacar(self, valor):
-        self.__saldo -= valor
+        if self.__valor_disponivel(valor):
+            self.__saldo -= valor
+        else:
+            print("O valor {} é maior que o valor permitido para saque!".format(valor))
 
     def transferir(self, conta_destino, valor):
         self.sacar(valor)
