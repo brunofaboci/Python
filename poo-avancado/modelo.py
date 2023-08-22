@@ -41,13 +41,35 @@ class Serie(ProgramaTV):
         return "{} - {} - {} temporadas - {} Likes".format(self._nome, self.ano, self.temporadas, self._likes)
 
 
+class Playlist:
+    def __init__(self, nome, programas):
+        self.nome = nome
+        self._programas = programas
+
+    def __getitem__(self, item):
+        return self._programas[item]
+
+    def __len__(self):
+        return len(self._programas)
+
+    @property
+    def listagem(self):
+        return self._programas
+
+
 vingadores = Filme('vingadores - guerra infinita', 2018, 120)
 vingadores.like()
+
+avatar = Filme('Avatar', 2009, 300)
 
 got = Serie('GoT', 2014, 7)
 got.like()
 
-filmes_e_series = [vingadores, got]
+filmes_e_series = [vingadores, got, avatar]
 
-for programa in filmes_e_series:
+playlist = Playlist('playlist', filmes_e_series)
+
+for programa in playlist:
     print(programa)
+
+print("Tamanho: {}".format(len(playlist)))
